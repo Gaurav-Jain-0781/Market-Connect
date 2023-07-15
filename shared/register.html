@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="vh-100 justify-content-center align-items-center d-flex">
+        <form class="bg-warning p-4" action="register.php" onsubmit="return validate()" method="POST">
+            <div class="text-center mb-3">
+                <h4>Register Here ....</h4>
+            </div>
+            <input required type="text" name="user_name" placeholder="User Name" class="form-control mt-2">
+            <input id="password_1" required type="password" name="password" placeholder="Password" class="form-control mt-2">
+            <input id="password_2"required type="text" name="re_password" placeholder="Retype Password" class="form-control mt-2">
+            <!--<input type="mobile" name="mobile_no" placeholder="Mobile No." class="form-control mt-2">-->
+            <select required name="user_type" class="form-control mt-2">
+                <option value="none">Select Type</option>
+                <option value="admin">Admin</option>
+                <option value="vendor">Vendor</option>
+                <option value="customer">Customer</option>
+            </select>
+            <div class="text-center">
+                <button class="btn btn-success mt-3">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validate(){
+            password_1 = document.getElementById("password_1");
+            password_2 = document.getElementById("password_2");
+            if(password_1.value === password_2.value){
+                return true;
+            }
+            else{
+                alert("Password Mismatch");
+                return false;
+            }
+        }
+    </script>
+
+</body>
+</html>
