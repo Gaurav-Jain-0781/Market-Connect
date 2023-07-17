@@ -9,43 +9,22 @@
     <title>Document</title>
 </head>
 <body>
+    
     <div class="vh-100 justify-content-center align-items-center d-flex flex-column">
-        <form class="bg-warning p-4" action="register.php" onsubmit="return validate()" method="POST">
+        <form class="bg-warning p-4" action="login.php" method="POST">
             <div class="text-center mb-3">
-                <h4>Register Here ....</h4>
+                <h4>Login Here ....</h4>
             </div>
             <input required type="text" name="user_name" placeholder="User Name" class="form-control mt-2">
             <input id="password_1" required type="password" name="password" placeholder="Password" class="form-control mt-2">
-            <input id="password_2"required type="text" name="re_password" placeholder="Retype Password" class="form-control mt-2">
-            <!--<input type="mobile" name="mobile_no" placeholder="Mobile No." class="form-control mt-2">-->
-            <select required name="user_type" class="form-control mt-2">
-                <option value="none">Select Type</option>
-                <option value="admin">Admin</option>
-                <option value="vendor">Vendor</option>
-                <option value="customer">Customer</option>
-            </select>
             <div class="text-center">
                 <button class="btn btn-success mt-3">Submit</button>
             </div>
         </form>
         <div>
-            Already have an account? Login <a href="login.html">here</a>
+            New user? Sign up <a href="register.html">here</a>
         </div>
     </div>
-
-    <script>
-        function validate(){
-            password_1 = document.getElementById("password_1");
-            password_2 = document.getElementById("password_2");
-            if(password_1.value === password_2.value){
-                return true;
-            }
-            else{
-                alert("Password Mismatch");
-                return false;
-            }
-        }
-    </script>
 
 </body>
 </html>
