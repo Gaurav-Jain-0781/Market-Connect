@@ -9,7 +9,7 @@ $encrypted_password = md5($user_password);
 //$conn = new mysqli("localhost", "root", "", "test");
 include_once "connection.php";
 
-$status = mysqli_query($conn, "insert into user(user_name, password, user_type) values('$user_name', '$user_password', '$user_type')");
+$status = mysqli_query($conn, "insert into user(user_name, password, user_type) values('$user_name', '$encrypted_password', '$user_type')");
 
 if($status){
     echo "Login Successfull";
