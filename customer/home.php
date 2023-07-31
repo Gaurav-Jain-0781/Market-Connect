@@ -1,3 +1,10 @@
+<?php
+
+include_once "authguard.php";
+include_once "menu.html";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,28 +31,14 @@
     </style>
 </head>
 <body>
-    
-        <script>
-            function confirmdelete(pid){
-                res = confirm("Are you sure you want to Delete the Product");
-                if(res){
-                    window.location = `delete.php?pid=${pid}`;
-                }
-            }
-        </script>
-
 </body>
 </html>
 
 <?php
 
-include_once "authguard.php";
-include_once "menu.html";
 include_once "../shared/connection.php";
 
-$user_id = $_SESSION['user_id'];
-
-$cursor = mysqli_query($conn, "select * from product where uploaded_by=$user_id");
+$cursor = mysqli_query($conn, "select * from product");
 
 
 while($row = mysqli_fetch_assoc($cursor)){
@@ -62,12 +55,12 @@ while($row = mysqli_fetch_assoc($cursor)){
                 <div class='card-text mb-2 text-muted'>$details</div>
                 <p class='card-text price'>$price</p>
             </div>
-            <div class='d-flex mt-2 gap-3'>
-                <a href='edit.php?pid={$pid}'>
-                    <button class='btn bg-warning'>Edit</button>
+            <div class='d-flex mt-2 justify-content-center'>
+                <a href='cart.php?pid=$pid'>
+                    <button class='btn bg-success text-white'>Add to Cart</button>
                 </a>
-                <button onclick='confirmdelete($pid)' class='btn bg-danger'>Delete</button>
             </div>
     </div>";
-    }
+
+}
 ?>

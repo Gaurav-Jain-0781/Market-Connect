@@ -12,7 +12,8 @@ include_once "connection.php";
 $status = mysqli_query($conn, "insert into user(user_name, password, user_type) values('$user_name', '$encrypted_password', '$user_type')");
 
 if($status){
-    echo "Login Successfull";
+    echo "Registration Successfull";
+    header("location:login.html");
 }
 else{
     echo mysqli_error($conn);

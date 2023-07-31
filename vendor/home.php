@@ -17,7 +17,7 @@ include_once "menu.html";
 </head>
 <body>
 
-    Hello Vendor
+    <h3 class="mt-2 text-center">Hello Vendor</h3>
 
     <div class="d-flex justify-content-center align-item-center vh-85 flex-row">
         <form action="upload.php" class="bg-success p-4" method="POST" enctype="multipart/form-data">
@@ -33,7 +33,6 @@ include_once "menu.html";
             </div>
         </form>
     </div>
-
 
 </body>
 </html>

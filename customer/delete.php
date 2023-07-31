@@ -1,10 +1,11 @@
 <?php
 
+include "authguard.php";
 include_once "../shared/connection.php";
 
-$pid = $_GET['pid'];
+$id = $_GET['id'];
 
-$status = mysqli_query($conn, "delete from product where pid=$pid");
+$status = mysqli_query($conn, "delete from cart where id=$id");
 
 if($status){
     header("location:view.php");
